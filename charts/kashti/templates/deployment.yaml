@@ -15,9 +15,11 @@ spec:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}
     spec:
+      nodeSelector:
+        b-type: brigade-node-group
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}:{{ default .Chart.AppVersion .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.internalPort }}

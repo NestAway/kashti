@@ -7,6 +7,8 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+  annotations:
+    dns.alpha.kubernetes.io/external: brigade-ui.{{ .Values.k8sEnvUrl }}
 spec:
   type: {{ .Values.service.type }}
   ports:

@@ -11,8 +11,8 @@
     "serve:prod": "gulp serve:prod",
     "build": "gulp build",
     "build:dev": "gulp build:dev",
-    "docker-build": "gulp build && docker build -t deis/kashti:latest .",
-    "docker-push": "docker push deis/kashti"
+    "docker-build": "gulp build && docker build -t nestaway/kashti:$(git describe --tags --always) .",
+    "docker-push": "docker push nestaway/kashti:$(git describe --tags --always)"
   },
   "devDependencies": {
     "@types/angular": "^1.6.39",
