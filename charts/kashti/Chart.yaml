@@ -2,4 +2,4 @@ apiVersion: v1
 description: A Helm chart for Kubernetes
 name: kashti
 version: 0.1.0
-appVersion: v0.2.0-2-g827d13f
+appVersion: v0.3.0-rc1-8-g4f0e5a8
